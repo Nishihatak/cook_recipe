@@ -1,0 +1,17 @@
+.header{
+  background-color: white;
+  height: 60px;
+  line-height: 60px;
+  &__left{
+    float: left;
+  }
+  &__right{
+    float: right;
+    &__username{
+      display: inline;
+    }
+    &__logout{
+      display: inline;
+    }
+  }
+}

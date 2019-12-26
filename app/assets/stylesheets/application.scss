@@ -13,3 +13,14 @@
  *= require_tree .
  *= require_self
  */
+
+ @import "reset";
+ @import "font-awesome-sprockets";
+ @import "font-awesome";
+
+ @import "modules/mixin";
+ @import "modules/variable";
+ @import "modules/common"; 
+
+ @import "home/index";
+
