@@ -1,0 +1,67 @@
+= render "shared/header"
+.header__content
+  .header_content__inner
+    .header__content__inner__logo
+      =link_to "#" do
+        = icon 'fas','utensils', class: 'icon-dinner'
+      .header__content__inner__chap
+        cook_recipe
+    .header__content__inner__sarch
+      %input(type="text")
+      %button 送信
+    .header__content__inner__falder
+      = link_to "#" do
+        = icon 'fas', 'folder' ,class: 'icon-folder'
+        My フォルダ
+    .header__content__inner__write
+      = link_to "#" do
+        レシピを書く
+.recipe-content
+  .recipe-lists
+    .recipe-lists__head
+      新着レシピ
+    .recipe-lists__inner
+      .recipe-lists__inner__preview
+        .recipe-lists__inner__preview__image
+          %img.photo.large_photo_clickable{:alt => "ちくわにスナップえんどう♫さっと焼き", "data-large-photo" => "https://img.cpcdn.com/recipes/4501011/m/7e9eb26d8f4f4dda7659fe5869cce811.jpg?u=9281646&p=1493615065", :src => "https://img.cpcdn.com/recipes/4501011/280x487s/dc7e6947d6a80a9b8f91b24c6a4ec8fc.jpg?u=9281646&p=1493615065"}/
+        .recipe-lists__inner__preview__text
+          .recipe-lists__inner__preview__text__title
+            = link_to "#" do
+              ホカホカの味噌汁
+          %span.recipe-lists__inner__preview__text__nickname
+            = link_to "#" do
+              たかし
+          .recipe-lists__inner__preview__text__info
+            みんなたべたらいいよね
+          .recipe-lists__inner__preview__text__material
+            材料：　人参、大根、わかめ
+      .recipe-lists__inner__preview
+        .recipe-lists__inner__preview__image
+          %img.photo.large_photo_clickable{:alt => "ちくわにスナップえんどう♫さっと焼き", "data-large-photo" => "https://img.cpcdn.com/recipes/4501011/m/7e9eb26d8f4f4dda7659fe5869cce811.jpg?u=9281646&p=1493615065", :src => "https://img.cpcdn.com/recipes/4501011/280x487s/dc7e6947d6a80a9b8f91b24c6a4ec8fc.jpg?u=9281646&p=1493615065"}/
+        .recipe-lists__inner__preview__text
+          .recipe-lists__inner__preview__text__title
+            = link_to "#" do
+              ホカホカの味噌汁
+          %span.recipe-lists__inner__preview__text__nickname
+            = link_to "#" do
+              たかし
+          .recipe-lists__inner__preview__text__info
+            みんなたべたらいいよね
+          .recipe-lists__inner__preview__text__material
+            材料：　人参、大根、わかめ
+      .recipe-lists__inner__preview
+        .recipe-lists__inner__preview__image
+          %img.photo.large_photo_clickable{:alt => "ちくわにスナップえんどう♫さっと焼き", "data-large-photo" => "https://img.cpcdn.com/recipes/4501011/m/7e9eb26d8f4f4dda7659fe5869cce811.jpg?u=9281646&p=1493615065", :src => "https://img.cpcdn.com/recipes/4501011/280x487s/dc7e6947d6a80a9b8f91b24c6a4ec8fc.jpg?u=9281646&p=1493615065"}/
+        .recipe-lists__inner__preview__text
+          .recipe-lists__inner__preview__text__title
+            = link_to "#" do
+              ホカホカの味噌汁
+          %span.recipe-lists__inner__preview__text__nickname
+            = link_to "#" do
+              たかし
+          .recipe-lists__inner__preview__text__info
+            みんなたべたらいいよね
+          .recipe-lists__inner__preview__text__material
+            材料：　人参、大根、わかめ
+
+

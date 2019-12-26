@@ -1,0 +1,125 @@
+@import "modules/mixin";
+@import "modules/variable";
+@import "modules/common"; 
+.header__content{
+  height: 82px;
+  padding: 20px;
+  text-align: center;
+  background: #f7f3e8;
+  line-height: 67px;
+  &__inner{
+    @include flexbox_space-between;
+    &__logo{
+      display: inline;
+    }
+    &__chap{
+      font-size: 20px;
+      display: inline;
+      padding-right: 30px;
+    }
+    &__sarch{
+      display: inline;
+      padding: 30px;
+    }
+    &__falder{
+      display: inline;
+      padding: 30px;
+      }
+    &__write{
+      display: inline;
+      padding: 30px;
+    }
+    .icon{
+      display: inline;
+      font-size: 25px;
+    }
+  }
+}
+.recipe-content{
+  background-color:#f7f3e8;
+}
+.recipe-lists{
+  text-align: center;
+  width:100%;
+  &__head{
+    width: 70%;
+    margin: auto;
+    font-size: 30px;
+    display:block;
+  }
+  &__inner{
+    background-color: white;
+    width: 70%;
+    margin: auto;
+    &__preview{
+      display: inline-block;
+      width: 100%;
+      margin: 50px;
+      &__image{
+        display:flex;
+        float: left;
+        width: 34%;
+        height: 200px;
+      }
+      &__text{
+        width: 66%;
+        float: right;
+        &__title{
+          font-size: 30px;
+          color: #7d940a;
+          font-weight: 600;
+          line-height: 100%;
+          margin-bottom: 4px;
+          text-decoration: underline;
+        }
+
+      }
+    }
+  }
+}
+// .recipe-lists{
+//   text-align: center;
+//   width:100%;
+
+//   background-color: rgb(231, 203, 180);
+//   &__head{
+//     width: 70%;
+//     margin: auto;
+//     @include flexbox_space-between;
+//     &__title{
+//       @include string_set(28px, normal, black);
+//     }
+//     &__more-link{
+//       line-height: 50px;
+//       a{
+//         @include string_set(16px, bold, $link_color);
+//         text-decoration: none;
+//       }
+//     }
+//   }
+//   &__recipes{
+//     @include flexbox_space-between;
+//     width: 70px;
+//     margin: auto;
+//     display: flex;
+//     justify-content: flex-start;
+//     flex-direction: row;
+//     flex-wrap: wrap;
+//     padding-bottom: 50px;
+//     &__recipe{
+//       @include height_width(220px,180px);
+//       margin: 10px;
+//       background-color: white;
+//       position: relative;
+//       &__image{
+//         @include height_width(70%,100%);
+//         vertical-align: bottom;
+//         object-fit: contain;
+//       }
+//       &__namebox{
+//         box-shadow: 2px 2px 4px gray;
+//         height: 30%;
+//       }
+//     }
+//   }
+// }

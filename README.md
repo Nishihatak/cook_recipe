@@ -40,6 +40,7 @@ Things you may want to cover:
 |------|----|-------|
 |title|string|null: false|
 |kostu|text|
+|info|text|
 |cooktime|integer|null: false|
 |user_id|reference|null: false,foreign_key: true|
 
