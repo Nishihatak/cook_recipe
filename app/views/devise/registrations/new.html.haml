@@ -1,0 +1,12 @@
+%h2 Sign up
+= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+  = f.label :nickname
+  = f.text_field :nickname, class:"input-default", placeholder: "例) メルカリ太郎"
+  = f.label :email
+  = f.email_field :email, class:"input-default", placeholder: "PC・携帯どちらでも可"
+  = f.label :password
+  = f.password_field  :password, class:"input-default", placeholder:"7文字以上",autocomplete:"off"
+  = f.label :avatar
+  = f.file_field :avatar
+  = f.submit "Sign up"
+= render "devise/shared/links"
