@@ -30,7 +30,6 @@ Things you may want to cover:
 |nickname|string|null: false|
 |email|string|null: false, unique: true|
 |avator|string|
-|tel_no|stirngs|
 
 ### Association
 - has_many :dishes
