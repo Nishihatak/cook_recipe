@@ -16,3 +16,10 @@
   height: $height;
   width: $width;
 }
+
+@mixin avatar_set($height, $width){
+  height: $height;
+  width: $width;
+  border-radius: 50%;
+  overflow: hidden;
+}
