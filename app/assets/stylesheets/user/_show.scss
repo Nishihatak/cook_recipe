@@ -1,0 +1,17 @@
+@import "modules/mixin";
+@import "modules/variable";
+@import "modules/common"; 
+.user-content{
+  background-color: rgb(251, 255, 246);
+  text-align: center;
+  &__pro{
+    background-color: $dark_gray;
+    height: 200px;
+   
+    &__avatar{
+      .avatar{
+        @include avatar_set(100px,100px)
+      }
+    }
+  }
+}
