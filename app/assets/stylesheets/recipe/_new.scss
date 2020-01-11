@@ -1,0 +1,46 @@
+.recipe{
+  background-color: bisque;
+
+  &__header{
+    padding: 30px;
+    &__titile{
+      font-size: 24px;
+      padding-bottom: 10px;
+      &__info{
+        font-size: 18px;
+      }
+    }
+  }
+  &__content{
+    text-align: center;
+    &__insert{
+      display: flex;
+      justify-content: center;
+      padding: 30px;
+      &__image{
+        padding: 20px;
+      }
+      &__material{
+        font-size: 24px;
+        padding: 20px;
+        &--list{
+          font-size: 10px;
+        }
+      }
+    }
+
+    &__cook{
+      background: chocolate;
+      font-size: 24px;
+      &--list{
+        font-size: 18px;
+      }
+    }
+    &__kostu{
+      font-size: 24px;
+      &--text{
+        font-size: 18px;
+      }
+    }
+  }
+}

@@ -1,4 +1,3 @@
-= render "shared/header"
 .header__content
   .header_content__inner
     .header__content__inner__logo
@@ -14,8 +13,7 @@
         = icon 'fas', 'folder' ,class: 'icon-folder'
         My フォルダ
     .header__content__inner__write
-      = link_to "#" do
-        レシピを書く
+      = link_to "レシピを書く", new_recipe_path
 .recipe-content
   .recipe-lists
     .recipe-lists__head
@@ -23,16 +21,16 @@
     .recipe-lists__inner
       .recipe-lists__inner__preview
         .recipe-lists__inner__preview__image
-          %img.photo.large_photo_clickable{:alt => "ちくわにスナップえんどう♫さっと焼き", "data-large-photo" => "https://img.cpcdn.com/recipes/4501011/m/7e9eb26d8f4f4dda7659fe5869cce811.jpg?u=9281646&p=1493615065", :src => "https://img.cpcdn.com/recipes/4501011/280x487s/dc7e6947d6a80a9b8f91b24c6a4ec8fc.jpg?u=9281646&p=1493615065"}/
+          = image_tag (@dish.image.to_s)
         .recipe-lists__inner__preview__text
           .recipe-lists__inner__preview__text__title
             = link_to "#" do
-              ホカホカの味噌汁
+              = @dish.title
           %span.recipe-lists__inner__preview__text__nickname
             = link_to "#" do
-              たかし
+              = @dish.user.nickname
           .recipe-lists__inner__preview__text__info
-            みんなたべたらいいよね
+            = @dish.info
           .recipe-lists__inner__preview__text__material
             材料：　人参、大根、わかめ
       .recipe-lists__inner__preview
