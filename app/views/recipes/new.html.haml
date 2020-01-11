@@ -1,0 +1,33 @@
+
+.recipe
+= form_with(model: @dish, url:recipes_path ) do |f|
+  .recipe__header
+    .recipe__header__titile
+    = f.text_field :title
+    .recipe__header__titile__info
+      = f.text_field :info
+  .recipe__content
+    .recipe__content__insert
+      .recipe__content__insert__image
+        - if @dish.image.present?
+          = image_tag @dish.image.to_s
+        -else
+          %i.far.fa-image
+          = f.file_field :image
+      .recipe__content__insert__material
+        材料
+        .recipe__content__insert__material--list
+          じゃがいも
+          みそ
+          水
+          牛乳
+          ねぎ
+    .recipe__content__cook
+      作り方
+      .recipe__content__cook--list
+        きる
+      .recipe__content__cook--list
+        焼く
+      .recipe__content__cook--list
+        盛り付ける
+      = f.submit 'レシピを投稿'

@@ -40,6 +40,7 @@ Things you may want to cover:
 |title|string|null: false|
 |kostu|text|
 |info|text|
+|image|string|
 |cooktime|integer|null: false|
 |user_id|reference|null: false,foreign_key: true|
 
@@ -75,7 +76,6 @@ Things you may want to cover:
 |Column|Type|Options|
 |------|----|-------|
 |images|string|
-|dishes_id|reference|null: false,foreign_key: true|
 |recipes_id|reference|null: false,foreign_key: true|
 
 ### Association

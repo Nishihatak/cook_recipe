@@ -25,4 +25,8 @@
  @import "shared/header";
  @import "home/index";
  @import "user/show";
+ @import "recipe/new";
 
+.hidden{
+  display: none;
+}
