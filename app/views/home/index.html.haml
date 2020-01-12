@@ -19,47 +19,5 @@
     .recipe-lists__head
       新着レシピ
     .recipe-lists__inner
-      .recipe-lists__inner__preview
-        .recipe-lists__inner__preview__image
-          = image_tag (@dish.image.to_s)
-        .recipe-lists__inner__preview__text
-          .recipe-lists__inner__preview__text__title
-            = link_to "#" do
-              = @dish.title
-          %span.recipe-lists__inner__preview__text__nickname
-            = link_to "#" do
-              = @dish.user.nickname
-          .recipe-lists__inner__preview__text__info
-            = @dish.info
-          .recipe-lists__inner__preview__text__material
-            材料：　人参、大根、わかめ
-      .recipe-lists__inner__preview
-        .recipe-lists__inner__preview__image
-          %img.photo.large_photo_clickable{:alt => "ちくわにスナップえんどう♫さっと焼き", "data-large-photo" => "https://img.cpcdn.com/recipes/4501011/m/7e9eb26d8f4f4dda7659fe5869cce811.jpg?u=9281646&p=1493615065", :src => "https://img.cpcdn.com/recipes/4501011/280x487s/dc7e6947d6a80a9b8f91b24c6a4ec8fc.jpg?u=9281646&p=1493615065"}/
-        .recipe-lists__inner__preview__text
-          .recipe-lists__inner__preview__text__title
-            = link_to "#" do
-              ホカホカの味噌汁
-          %span.recipe-lists__inner__preview__text__nickname
-            = link_to "#" do
-              たかし
-          .recipe-lists__inner__preview__text__info
-            みんなたべたらいいよね
-          .recipe-lists__inner__preview__text__material
-            材料：　人参、大根、わかめ
-      .recipe-lists__inner__preview
-        .recipe-lists__inner__preview__image
-          %img.photo.large_photo_clickable{:alt => "ちくわにスナップえんどう♫さっと焼き", "data-large-photo" => "https://img.cpcdn.com/recipes/4501011/m/7e9eb26d8f4f4dda7659fe5869cce811.jpg?u=9281646&p=1493615065", :src => "https://img.cpcdn.com/recipes/4501011/280x487s/dc7e6947d6a80a9b8f91b24c6a4ec8fc.jpg?u=9281646&p=1493615065"}/
-        .recipe-lists__inner__preview__text
-          .recipe-lists__inner__preview__text__title
-            = link_to "#" do
-              ホカホカの味噌汁
-          %span.recipe-lists__inner__preview__text__nickname
-            = link_to "#" do
-              たかし
-          .recipe-lists__inner__preview__text__info
-            みんなたべたらいいよね
-          .recipe-lists__inner__preview__text__material
-            材料：　人参、大根、わかめ
-
-
+      = render "home/recipe"
+        

@@ -1,0 +1,15 @@
+- @dishes.each do |dish|
+  .recipe-lists__inner__preview
+    .recipe-lists__inner__preview__image
+      = image_tag (dish.image.to_s)
+    .recipe-lists__inner__preview__text
+      .recipe-lists__inner__preview__text__title
+        = link_to "#" do
+          = dish.title
+      %span.recipe-lists__inner__preview__text__nickname
+        = link_to user_path(dish.user.id) do
+          = dish.user.nickname
+      .recipe-lists__inner__preview__text__info
+        = dish.info
+      .recipe-lists__inner__preview__text__material
+        材料：　人参、大根、わかめ
