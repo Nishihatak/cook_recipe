@@ -4,7 +4,7 @@
       = image_tag (dish.image.to_s)
     .recipe-lists__inner__preview__text
       .recipe-lists__inner__preview__text__title
-        = link_to "#" do
+        = link_to recipe_path(dish.id) do
           = dish.title
       %span.recipe-lists__inner__preview__text__nickname
         = link_to user_path(dish.user.id) do
