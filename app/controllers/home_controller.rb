@@ -1,6 +1,6 @@
 class HomeController < ApplicationController
 
   def index
-    @dish = Dish.find(1)
+    @dishes = Dish.includes(:user).order("created_at DESC").limit(3)
   end
 end
