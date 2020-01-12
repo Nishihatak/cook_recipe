@@ -10,6 +10,7 @@ class RecipesController < ApplicationController
   end
 
   def show
+    @dish = Dish.find(params[:id])
   end
 
   private
