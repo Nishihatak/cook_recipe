@@ -1,6 +1,6 @@
 
 .recipe
-= form_with(model: @dish, url:recipes_path, method: :post ) do |f|
+= form_with(model: @dish, url:recipes_path,local: true,method: :post ) do |f|
   .recipe__header
     .recipe__header__titile
     = f.text_field :title

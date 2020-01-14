@@ -1,38 +1,18 @@
-@import "modules/mixin";
-@import "modules/variable";
-@import "modules/common"; 
 .header__content{
   height: 82px;
   padding: 20px;
   text-align: center;
   background: #f7f3e8;
   line-height: 67px;
-  &__inner{
+  &__list{
+    background-color: white;
+    width: 70%;
+    margin: auto;
     @include flexbox_space-between;
-    &__logo{
-      display: inline;
-    }
-    &__chap{
-      font-size: 20px;
-      display: inline;
-      padding-right: 30px;
-    }
-    &__sarch{
-      display: inline;
-      padding: 30px;
-    }
-    &__falder{
-      display: inline;
-      padding: 30px;
-      }
-    &__write{
-      display: inline;
-      padding: 30px;
-    }
-    .icon{
-      display: inline;
-      font-size: 25px;
-    }
+  }
+  &__list li{
+    display: block;
+    padding:0px 40px;
   }
 }
 .recipe-content{

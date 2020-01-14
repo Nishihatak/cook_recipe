@@ -1,18 +1,36 @@
-.header
-  .header__left
-    = link_to "トップページ", root_path
-  -if user_signed_in?
-    .header__right
-      .header__right__username
-        = link_to user_path(current_user.id) do
-          -if current_user.avatar
-            = image_tag current_user.avatar,class: "avatar"
-          = current_user.nickname 
-    .header__right__logout
-      = link_to "ログアウト" ,destroy_user_session_path, method: :delete
-  -else
-    .header__right
-      .header__right__username
-        = link_to "新規登録", new_user_registration_path
-      .header__right__logout
-        = link_to "ログイン", new_user_session_path
+%header.header
+  .header__inner
+    .header__inner__left
+      .header__inner__left__title
+        = link_to root_path do
+          = icon 'fas','utensils', class: 'icon-dinner'
+          cook_recipe
+    .header__inner__search
+      .header__inner__search--input
+        = form_tag('/items/search', method: :get) do
+          %input#item-search{type: "text", placeholder: "料理を検索", name: "keyword"}
+      .header__inner__search--icon
+        = link_to "#" do
+          = icon 'fa', 'search', id: "search-icon"
+    -if user_signed_in?
+      %ul.header__inner__right
+        %li.header__inner__right__user
+          = link_to user_path(current_user.id) do
+            -if current_user.avatar
+              %li.header__inner__right__nickname
+                = current_user.nickname
+              %li.header__inner__right__avatar
+                = image_tag current_user.avatar,class: "avatar"
+        %li.header__inner__right__logout
+          = link_to "ログアウト" ,destroy_user_session_path, method: :delete
+        %li.header__inner__right__write
+          = link_to "レシピを書く", new_recipe_path
+    -else
+      %ul.header__inner__right
+        %li.header__inner__right__username
+          = link_to "新規登録", new_user_registration_path
+        %li.header__inner__right__logout
+          = link_to "ログイン", new_user_session_path
+        %li.header__inner__right__write
+          = link_to "#" do
+            レシピをかく

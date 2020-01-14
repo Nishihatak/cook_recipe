@@ -1,19 +1,17 @@
 .header__content
-  .header_content__inner
-    .header__content__inner__logo
+  %ul.header__content__list
+    %li.header__content__list__meet
       =link_to "#" do
-        = icon 'fas','utensils', class: 'icon-dinner'
-      .header__content__inner__chap
-        cook_recipe
-    .header__content__inner__sarch
-      %input(type="text")
-      %button 送信
-    .header__content__inner__falder
+        肉料理
+    %li.header__content__list__fish
+      =link_to "#" do
+        魚料理
+    %li.header__content__list__salad
       = link_to "#" do
-        = icon 'fas', 'folder' ,class: 'icon-folder'
-        My フォルダ
-    .header__content__inner__write
-      = link_to "レシピを書く", new_recipe_path
+        サラダ
+    %li.header__content__list__1ppinn
+      =link_to "#" do
+        一品料理
 .recipe-content
   .recipe-lists
     .recipe-lists__head
