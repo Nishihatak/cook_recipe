@@ -2,22 +2,57 @@
   background-color: white;
   height: 60px;
   line-height: 60px;
-  &__left{
-    float: left;
-  }
-  &__right{
-    float: right;
-    &__username{
-      display: inline;
+  font-family: $main_font;
+  box-shadow: 2px 2px 4px gray;
+  position:relative;
+  &__inner{
+    margin: 0 auto;
+    @include flexbox_space-between;
+    &__search{
+      position: relative;
+      @include height_width(100%, calc(100% - 70%));
+      &--input{
+        @include height_width(100%, 100%);
+        #item-search{
+          @include height_width(40px, calc(100% - 14px));
+          border-radius: 5px;
+          padding-left: 10px;
+          font-size: 16px;
+        }
+      }
+      &--icon{
+        position: absolute;
+        right: 10px;
+        top: 5px;
+        #search-icon{
+          color: black;
+        }
+      }
     }
-    .avatar{
-      width: 60px;
-      height: 60px;
-      border-radius: 50%;
-      overflow: hidden;
+    &__left{
+      float: left;
+      padding:0px 33px;
+      &__title{
+        font-size: 36px;
+      }
+
     }
-    &__logout{
-      display: inline;
+    &__right li{
+      float: right;
+      padding:0px 33px 0px 0px;
+      &__avatar{
+        padding-top: 10px;
+      }
+      .avatar{
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        overflow: hidden;
+      }
+      &__logout{
+        display: inline;
+      }
+
     }
   }
 }
