@@ -36,11 +36,8 @@
               -if @recipe.id.present?
                 = image_tag(@recipe.image.image.to_s)
               -else
-                = f.fields_for :images do |i|
-                  = i.label :image do
-                    = icon 'fas', 'camera'
-                    写真を載せる 
-                    = i.file_field :image, class: 'hidden', name:'images[image][]', 'data-image-no': 0
+                = icon 'fas', 'camera'
+                = r.file_field :image, name:'recipes[image][]', 'data-image-no': 0
             = r.label :recipe do
               = r.text_area :recipe, name:'recipes[recipe][]', 'data-image-no': 0
           %li.recipe__main__recipe-form__cook__list
@@ -48,11 +45,8 @@
               -if @recipe.id.present?
                 = image_tag(@recipe.image.to_s)
               -else
-                = f.fields_for :images do |i|
-                  = i.label :image do
-                    写真を載せる 
-                    = icon 'fas', 'camera'
-                    = i.file_field :image, class: 'hidden', name:'images[image][]', 'data-image-no': 0
+                = icon 'fas', 'camera'
+                = r.file_field :image, name:'recipes[image][]', 'data-image-no': 0
             = r.label :recipe do
               = r.text_area :recipe, name:'recipes[recipe][]', 'data-image-no': 0
           %li.recipe__main__recipe-form__cook__list
@@ -60,11 +54,8 @@
               -if @recipe.id.present?
                 = image_tag(@recipe.image.to_s)
               -else
-                = f.fields_for :images do |i|
-                  = i.label :image do
-                    写真を載せる 
-                    = icon 'fas', 'camera'
-                    = i.file_field :image, class: 'hidden', name:'images[image][]', 'data-image-no': 0
+                = icon 'fas', 'camera'
+                = r.file_field :image, name:'recipes[image][]', 'data-image-no': 0
             = r.label :recipe do
               = r.text_area :recipe, name:'recipes[recipe][]', 'data-image-no': 0
           %li.recipe__main__recipe-form__cook__list
@@ -72,11 +63,8 @@
               -if @recipe.id.present?
                 = image_tag(@recipe.image.to_s)
               -else
-                = f.fields_for :images do |i|
-                  = i.label :image do
-                    写真を載せる 
-                    = icon 'fas', 'camera'
-                    = i.file_field :image, class: 'hidden', name:'images[image][]', 'data-image-no': 0
+                = icon 'fas', 'camera'
+                = r.file_field :image, name:'recipes[image][]', 'data-image-no': 0
             = r.label :recipe do
               = r.text_area :recipe, name:'recipes[recipe][]', 'data-image-no': 0
     .recipe__submit
