@@ -1,3 +1,4 @@
 class Image < ApplicationRecord
-  has_many :recipes, through: :recipe_images
+  belongs_to :recipe
+  mount_uploader :image, ImageUploader 
 end

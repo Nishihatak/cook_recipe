@@ -1,4 +1,4 @@
 class RecipeImage < ApplicationRecord
   belongs_to :images
-  belomgs_to :recipes
+  belongs_to :recipes
 end

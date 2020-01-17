@@ -21,6 +21,12 @@
           height: 60px;
           font-size: 18px;
         }
+        &__show-title{
+          font-size: 50px;
+        }
+          &__show-info{
+            font-size: 18px;
+          }
     }
     &__content{
       padding:20px;
@@ -43,9 +49,16 @@
     &__recipe-form{
       position: relative;
       font-size:18px;
-      &__list{
-        height:100px;
-        width: 15%;
+      &__cook{
+      display: flex;
+        &__list{
+          height:100px;
+          width: 20%;
+          margin: 20px;
+          &--icon{
+            float:right;
+          }
+        }
       }
     }
   }
@@ -80,4 +93,8 @@
       font-size: 18px;
       padding:10px;
       margin: 10px;
+    }
+
+    .image{
+      height: 100%;
     }

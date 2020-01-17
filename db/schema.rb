@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_01_10_052145) do
+ActiveRecord::Schema.define(version: 2020_01_16_061646) do
 
   create_table "active_storage_attachments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -63,12 +63,10 @@ ActiveRecord::Schema.define(version: 2020_01_10_052145) do
 
   create_table "recipes", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "dish_id", null: false
-    t.bigint "image_id", null: false
     t.text "recipe", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["dish_id"], name: "index_recipes_on_dish_id"
-    t.index ["image_id"], name: "index_recipes_on_image_id"
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -91,5 +89,4 @@ ActiveRecord::Schema.define(version: 2020_01_10_052145) do
   add_foreign_key "recipe_images", "images"
   add_foreign_key "recipe_images", "recipes"
   add_foreign_key "recipes", "dishes"
-  add_foreign_key "recipes", "images"
 end

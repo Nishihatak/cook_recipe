@@ -1,4 +1,5 @@
 class Recipe < ApplicationRecord
-belongs_to :dishes
-has_many :images, through: :recipe_images
+belongs_to :dish
+has_one :image,  dependent: :destroy
+mount_uploader :image, ImageUploader
 end
