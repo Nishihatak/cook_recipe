@@ -2,12 +2,10 @@
 @import "modules/variable";
 @import "modules/common"; 
 .user-content{
-  background-color: rgb(251, 255, 246);
+  padding-top:80px;
   text-align: center;
   &__pro{
-    background-color: $dark_gray;
-    height: 200px;
-   
+    height: 150px;
     &__avatar{
       .avatar{
         @include avatar_set(100px,100px)
