@@ -34,9 +34,8 @@
               = icon 'fas','plus',class: "plus"
             .recipe__main__recipe-form__cook__list--image
               -if @recipe.id.present?
-                = image_tag(@recipe.image.image.to_s)
+                = image_tag(@recipe.image.to_s)
               -else
-                = icon 'fas', 'camera'
                 = r.file_field :image, name:'recipes[image][]', 'data-image-no': 0
             = r.label :recipe do
               = r.text_area :recipe, name:'recipes[recipe][]', 'data-image-no': 0
@@ -45,7 +44,6 @@
               -if @recipe.id.present?
                 = image_tag(@recipe.image.to_s)
               -else
-                = icon 'fas', 'camera'
                 = r.file_field :image, name:'recipes[image][]', 'data-image-no': 0
             = r.label :recipe do
               = r.text_area :recipe, name:'recipes[recipe][]', 'data-image-no': 0
@@ -54,7 +52,6 @@
               -if @recipe.id.present?
                 = image_tag(@recipe.image.to_s)
               -else
-                = icon 'fas', 'camera'
                 = r.file_field :image, name:'recipes[image][]', 'data-image-no': 0
             = r.label :recipe do
               = r.text_area :recipe, name:'recipes[recipe][]', 'data-image-no': 0
@@ -63,7 +60,6 @@
               -if @recipe.id.present?
                 = image_tag(@recipe.image.to_s)
               -else
-                = icon 'fas', 'camera'
                 = r.file_field :image, name:'recipes[image][]', 'data-image-no': 0
             = r.label :recipe do
               = r.text_area :recipe, name:'recipes[recipe][]', 'data-image-no': 0

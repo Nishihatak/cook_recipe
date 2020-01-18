@@ -1,0 +1,47 @@
+.recipe
+  = form_with(model: @dish, url:recipes_path,local: true,method: :post ) do |f|
+    .recipe__main
+      .recipe__main__header
+        .recipe__main__header__titile
+        = f.text_field :title,class: "title--input",placeholder: "料理のタイトル"
+        .recipe__main__header__titile__info
+        = f.text_area :info, class: "info--input", placeholder: "料理についての説明をしてください"
+      .recipe__main__content
+        .recipe__main__content__insert
+          .recipe__main__content__insert__image
+            - if @dish.image.present?
+              = f.label :image do
+                = image_tag @dish.image.to_s,class: "image"
+                = f.file_field :image, class: 'hidden' 
+            -else
+              = f.label :image, class: 'form__mask__image' do
+                = icon 'fas', 'camera'
+                = f.file_field :image, class: 'hidden'  
+          .recipe__main__content__insert__material
+            %h3 材料
+            .recipe__main__content__insert__material--list
+              じゃがいも
+              みそ
+              水
+              牛乳
+              ねぎ
+      .recipe__main__recipe-form
+        %h3 作り方
+        %ul.recipe__main__recipe-form__cook
+          - @recipes.each_with_index do |recipe,i|
+            = f.fields_for :recipes do |r|
+              %li.recipe__main__recipe-form__cook__list
+                手順
+                = (i + 1)
+                .recipe__main__recipe-form__cook__list--icon
+                  = icon 'fas','minus',class: "minus"
+                  = icon 'fas','plus',class: "plus"
+                .recipe__main__recipe-form__cook__list--image
+                  - if recipe.image.present?
+                    = r.label :image do
+                      = image_tag recipe.image.to_s,class: "image"
+                      = r.file_field :image, name:'recipes[image][]', 'data-image-no': 0,value: "#{recipe.image.to_s}"
+                = r.label :recipe do
+                  = r.text_area :recipe, name:'recipes[recipe][]', 'data-image-no': 0, value: "#{recipe.recipe}"
+    .recipe__submit
+    = f.submit 'レシピを投稿',class:"submit-botton"
