@@ -1,21 +1,22 @@
-.header__content
-  %ul.header__content__list
-    %li.header__content__list__meet
-      =link_to "#" do
-        肉料理
-    %li.header__content__list__fish
-      =link_to "#" do
-        魚料理
-    %li.header__content__list__salad
-      = link_to "#" do
-        サラダ
-    %li.header__content__list__1ppinn
-      =link_to "#" do
-        一品料理
-.recipe-content
-  .recipe-lists
-    .recipe-lists__head
-      新着レシピ
-    .recipe-lists__inner
-      = render "home/recipe"
-      = paginate @dishes
+.header__wrapper
+  .header__wrapper__container
+    %h1 レシピを共有しあうサイト
+    %p 初心者にもやさしいスライドとレッスンで、Webサービスを作りながらプログラミングを学んでいきましょう
+
+.main
+  .main__wrapper
+    %ul.main__wrapper__header
+      %li.main__wrapper__header__left
+        新着
+      %li.main__wrapper__header__center
+        時間
+      %li.main__wrapper__header__right
+        栄養
+    .main_wrapper__content
+      .recipe-content
+        .recipe-lists
+          .recipe-lists__head
+           
+          .recipe-lists__inner
+            = render "home/recipe"
+            = paginate @dishes

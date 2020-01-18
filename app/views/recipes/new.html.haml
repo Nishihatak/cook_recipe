@@ -1,4 +1,3 @@
-
 .recipe
   = form_with(model: @dish, url:recipes_path,local: true,method: :post ) do |f|
     .recipe__main
@@ -11,11 +10,15 @@
         .recipe__main__content__insert
           .recipe__main__content__insert__image
             - if @dish.image.present?
-              = image_tag @dish.image
+              = f.label :image do
+                = image_tag @dish.image.to_s,class: "dish-image"
+                = icon 'fas', 'camera',class:"dish-image--icon"
+                = f.file_field :image, class: 'hidden' 
             -else
               = f.label :image, class: 'form__mask__image' do
-                = icon 'fas', 'camera'
-                = f.file_field :image, class: 'hidden'  
+                = icon 'fas', 'camera',class:"recipe-icon"
+                = f.file_field :image, class: 'hidden'
+            %p 画像をクリックして写真変更
           .recipe__main__content__insert__material
             %h3 材料
             .recipe__main__content__insert__material--list
@@ -29,38 +32,47 @@
         %h3 作り方
         %ul.recipe__main__recipe-form__cook
           %li.recipe__main__recipe-form__cook__list
+            手順
             .recipe__main__recipe-form__cook__list--icon
               = icon 'fas','minus',class: "minus"
               = icon 'fas','plus',class: "plus"
             .recipe__main__recipe-form__cook__list--image
-              -if @recipe.id.present?
-                = image_tag(@recipe.image.to_s)
-              -else
-                = r.file_field :image, name:'recipes[image][]', 'data-image-no': 0
+            = r.label :image do
+              = icon 'fas', 'camera',class:"recipe-icon"
+              = r.file_field :image, name:'recipes[image][]', 'data-image-no': 0, class: 'hidden'
             = r.label :recipe do
               = r.text_area :recipe, name:'recipes[recipe][]', 'data-image-no': 0
           %li.recipe__main__recipe-form__cook__list
+            手順
+            .recipe__main__recipe-form__cook__list--icon
+              = icon 'fas','minus',class: "minus"
+              = icon 'fas','plus',class: "plus"
             .recipe__main__recipe-form__cook__list--image
-              -if @recipe.id.present?
-                = image_tag(@recipe.image.to_s)
-              -else
-                = r.file_field :image, name:'recipes[image][]', 'data-image-no': 0
+            = r.label :image do
+              = icon 'fas', 'camera',class:"recipe-icon"
+              = r.file_field :image, name:'recipes[image][]', 'data-image-no': 0, class: 'hidden'
             = r.label :recipe do
               = r.text_area :recipe, name:'recipes[recipe][]', 'data-image-no': 0
           %li.recipe__main__recipe-form__cook__list
+            手順
+            .recipe__main__recipe-form__cook__list--icon
+              = icon 'fas','minus',class: "minus"
+              = icon 'fas','plus',class: "plus"
             .recipe__main__recipe-form__cook__list--image
-              -if @recipe.id.present?
-                = image_tag(@recipe.image.to_s)
-              -else
-                = r.file_field :image, name:'recipes[image][]', 'data-image-no': 0
+            = r.label :image do
+              = icon 'fas', 'camera',class:"recipe-icon"
+              = r.file_field :image, name:'recipes[image][]', 'data-image-no': 0, class: 'hidden'
             = r.label :recipe do
               = r.text_area :recipe, name:'recipes[recipe][]', 'data-image-no': 0
           %li.recipe__main__recipe-form__cook__list
+            手順
+            .recipe__main__recipe-form__cook__list--icon
+              = icon 'fas','minus',class: "minus"
+              = icon 'fas','plus',class: "plus"
             .recipe__main__recipe-form__cook__list--image
-              -if @recipe.id.present?
-                = image_tag(@recipe.image.to_s)
-              -else
-                = r.file_field :image, name:'recipes[image][]', 'data-image-no': 0
+            = r.label :image do
+              = icon 'fas', 'camera',class:"recipe-icon"
+              = r.file_field :image, name:'recipes[image][]', 'data-image-no': 0, class: 'hidden'
             = r.label :recipe do
               = r.text_area :recipe, name:'recipes[recipe][]', 'data-image-no': 0
     .recipe__submit

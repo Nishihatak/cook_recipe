@@ -36,12 +36,14 @@
       &__insert{
         @include flexbox_space-between;
         &__image{
-          height:200px;
-          width: 200px;
-          font-size:100px;
-          padding-left:100px;
+          width: 50%;
+          height: 50%;
+          font-size:18px;
+          position: relative;
         }
         &__material{
+          width: 50%;
+          height: 50%;
           padding-right:100px;
         }
       }
@@ -50,11 +52,14 @@
       position: relative;
       font-size:18px;
       &__cook{
-      display: flex;
+        margin: auto;
+        display: flex;
+        flex-wrap: wrap;
         &__list{
-          height:100px;
-          width: 20%;
-          margin: 20px;
+            border: solid 3px #364e96;
+            width:22%;
+            margin: 10px;
+            float: left;
           &--icon{
             float:right;
           }
@@ -100,6 +105,38 @@
       width: 200px;
     }
     .recipe-image{
-      height: 80px;
-      width: 80px;
+      height: 120px;
+      width: 120px;
+      margin: auto;
+      &--icon{
+        position: absolute;
+        font-size: 56px;
+        top: 115px;
+        left: 87px;
+        opacity: 0.6;
+      }
+      &--icon:hover{
+        opacity: 1;
+      }
+    }
+    .dish-image{
+      height: 200px;
+      width: 200px;
+      &--icon{
+        position: absolute;
+        font-size: 100px;
+        top: 48px;
+        left: 160px;
+        opacity: 0.8;
+      }
+      &--icon:hover{
+        opacity: 1;
+      }
+    }
+    .recipe-icon{
+      font-size: 100px;
+      margin: auto;
+    }
+    .recipe-recipe{
+      width:90%;
     }

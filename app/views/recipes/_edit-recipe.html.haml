@@ -1,0 +1,22 @@
+= form_with(model: @dish, url:recipes_path,local: true,method: :post ) do |f|
+  %ul.recipe__main__recipe-form__cook
+    - @recipes.each_with_index do |recipe,i|
+      = f.fields_for :recipes do |r|
+        %li.recipe__main__recipe-form__cook__list
+          手順
+          = (i + 1)
+          .recipe__main__recipe-form__cook__list--icon
+            = icon 'fas','minus',class: "minus"
+            = icon 'fas','plus',class: "plus"
+          .recipe__main__recipe-form__cook__list--image
+            - if recipe.image.present?
+              = r.label :image do
+                = image_tag recipe.image.to_s,class: "recipe-image"
+                = icon 'fas', 'camera',class:"recipe-image--icon"
+                = r.file_field :image, name:'recipes[image][]', 'data-image-no': 0, class: 'hidden' ,value: "#{recipe.image.to_s}"
+            -else 
+              = r.label :image do
+                = r.file_field :image, name:'recipes[image][]', 'data-image-no': 0 
+          .recipe__main__recipe-form__cook__list--recipe
+            = r.label :recipe do
+              = r.text_area :recipe, name:'recipes[recipe][]', 'data-image-no': 0,class: "recipe-recipe", value: "#{recipe.recipe}"
