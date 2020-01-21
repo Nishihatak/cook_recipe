@@ -53,16 +53,10 @@
       font-size:18px;
       &__cook{
         margin: auto;
-        display: flex;
-        flex-wrap: wrap;
         &__list{
             border: solid 3px #364e96;
-            width:22%;
+            width:100%;
             margin: 10px;
-            float: left;
-          &--icon{
-            float:right;
-          }
         }
       }
     }
@@ -139,4 +133,11 @@
     }
     .recipe-recipe{
       width:90%;
+      padding:10px;
+    }
+    .material--list{
+      width:90%;
+      height:150px;
+      padding:10px;
+      margin: 10px;
     }

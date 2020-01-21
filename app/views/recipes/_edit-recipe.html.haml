@@ -1,4 +1,4 @@
-= form_with(model: @dish, url:recipes_path,local: true,method: :post ) do |f|
+= form_with(model: @dish, url:recipe_path,local: true,method: :pacth) do |f|
   %ul.recipe__main__recipe-form__cook
     - @recipes.each_with_index do |recipe,i|
       = f.fields_for :recipes do |r|

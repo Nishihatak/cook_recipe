@@ -15,12 +15,8 @@
         .recipe__main__content__insert__material
           %h3 材料
           .recipe__main__content__insert__material--list
-            じゃがいも
-            みそ
-            水
-            牛乳
-            ねぎ
+            = @dish.food
     .recipe__main__recipe-form
       %h3 作り方
       %ul.recipe__main__recipe-form__cook
-        = render "recipes/recipe" 
+        = @dish.recipe 

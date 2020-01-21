@@ -1,5 +1,5 @@
 .recipe
-  = form_with(model: @dish, url:recipes_path,local: true,method: :post ) do |f|
+  = form_with(model: @dish, url:recipe_path,local: true, method: :patch) do |f|
     .recipe__main
       .recipe__main__header
         .recipe__main__header__titile
@@ -16,19 +16,20 @@
                 = f.file_field :image, class: 'hidden' 
             -else
               = f.label :image, class: 'form__mask__image' do
-                = icon 'fas', 'camera'
+                = icon 'fas', 'camera',class:"recipe-icon"
                 = f.file_field :image, class: 'hidden'
             %p 画像をクリックして写真変更
           .recipe__main__content__insert__material
             %h3 材料
             .recipe__main__content__insert__material--list
-              じゃがいも
-              みそ
-              水
-              牛乳
-              ねぎ
+              = f.text_area :food, class: "material--list", placeholder: "料理の材料を入力してください"
+
       .recipe__main__recipe-form
         %h3 作り方
-        = render partial:"recipes/edit-recipe", locals: {recipes: @recipes}
+        %ul.recipe__main__recipe-form__cook
+          %li.recipe__main__recipe-form__cook__list
+            手順
+            .recipe__main__recipe-form__cook__list--icon
+              = f.text_area :recipe, class: "material--list"
     .recipe__submit
     = f.submit 'レシピを投稿',class:"submit-botton"

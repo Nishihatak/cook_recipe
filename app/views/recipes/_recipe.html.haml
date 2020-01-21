@@ -3,7 +3,5 @@
     手順
     = (i + 1)
     .recipe__main__recipe-form__cook__list--image
-    -if recipe.image.present?
-      = image_tag recipe.image.to_s,class: "recipe-image"
     .recipe__main__recipe-form__cook__list--text
-      = recipe.recipe
+      = recipe.text

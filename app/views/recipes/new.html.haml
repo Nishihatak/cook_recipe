@@ -22,58 +22,14 @@
           .recipe__main__content__insert__material
             %h3 材料
             .recipe__main__content__insert__material--list
-              じゃがいも
-              みそ
-              水
-              牛乳
-              ねぎ
+              = f.text_area :food, class: "material--list", placeholder: "料理の材料を入力してください"
+
       .recipe__main__recipe-form
-      = f.fields_for :recipes do |r|
         %h3 作り方
         %ul.recipe__main__recipe-form__cook
           %li.recipe__main__recipe-form__cook__list
             手順
             .recipe__main__recipe-form__cook__list--icon
-              = icon 'fas','minus',class: "minus"
-              = icon 'fas','plus',class: "plus"
-            .recipe__main__recipe-form__cook__list--image
-            = r.label :image do
-              = icon 'fas', 'camera',class:"recipe-icon"
-              = r.file_field :image, name:'recipes[image][]', 'data-image-no': 0, class: 'hidden'
-            = r.label :recipe do
-              = r.text_area :recipe, name:'recipes[recipe][]', 'data-image-no': 0
-          %li.recipe__main__recipe-form__cook__list
-            手順
-            .recipe__main__recipe-form__cook__list--icon
-              = icon 'fas','minus',class: "minus"
-              = icon 'fas','plus',class: "plus"
-            .recipe__main__recipe-form__cook__list--image
-            = r.label :image do
-              = icon 'fas', 'camera',class:"recipe-icon"
-              = r.file_field :image, name:'recipes[image][]', 'data-image-no': 0, class: 'hidden'
-            = r.label :recipe do
-              = r.text_area :recipe, name:'recipes[recipe][]', 'data-image-no': 0
-          %li.recipe__main__recipe-form__cook__list
-            手順
-            .recipe__main__recipe-form__cook__list--icon
-              = icon 'fas','minus',class: "minus"
-              = icon 'fas','plus',class: "plus"
-            .recipe__main__recipe-form__cook__list--image
-            = r.label :image do
-              = icon 'fas', 'camera',class:"recipe-icon"
-              = r.file_field :image, name:'recipes[image][]', 'data-image-no': 0, class: 'hidden'
-            = r.label :recipe do
-              = r.text_area :recipe, name:'recipes[recipe][]', 'data-image-no': 0
-          %li.recipe__main__recipe-form__cook__list
-            手順
-            .recipe__main__recipe-form__cook__list--icon
-              = icon 'fas','minus',class: "minus"
-              = icon 'fas','plus',class: "plus"
-            .recipe__main__recipe-form__cook__list--image
-            = r.label :image do
-              = icon 'fas', 'camera',class:"recipe-icon"
-              = r.file_field :image, name:'recipes[image][]', 'data-image-no': 0, class: 'hidden'
-            = r.label :recipe do
-              = r.text_area :recipe, name:'recipes[recipe][]', 'data-image-no': 0
+              = f.text_area :recipe, class: "material--list"
     .recipe__submit
     = f.submit 'レシピを投稿',class:"submit-botton"

@@ -2,22 +2,15 @@ class RecipesController < ApplicationController
 
   def new
     @dish = Dish.new
-    @recipe = Recipe.new
   end
 
   def create
     @dish = Dish.create(params_dish)
-    if @dish.save && params[:recipes][:recipe].present? && params[:recipes][:image].present?
-      @recipes =params.require(:recipes).permit(recipe:[],image:[]).merge(dish_id: @dish.id)
-      @recipes.require(:image).zip(@recipes.require(:recipe)).each do |image,recipe|
-        @recipe = Recipe.create(recipe: recipe,image: image, dish_id: @dish.id)
-      end  
-    end
   end
 
+
 def show
-    @dish = Dish.find(params[:id])
-    @recipes = @dish.recipes
+  @dish = Dish.find(params[:id])
 end
 
 def edit
@@ -26,13 +19,17 @@ def edit
 end
 
 def update
-  @dish = Dish.create(params_dish)
-  if @dish.save && params[:recipes][:recipe].present? &&
-    @recipes = Pecipe.new(params_recipe)
-    @recipes.require(:image).zip(@recipes.require(:recipe)).each do |image,recipe|
-      @recipe = Recipe.update(recipe: recipe,image: image, dish_id: @dish.id)
-    end  
+  @dish = Dish.find(params[:id])
+  if @dish = @dish.update(params_dish)
+    redirect_to root_path
+  else
+    render :edit
   end
+end
+
+def destroy
+  dish = Dish.find(params[:id])
+    dish.destroy if dish.user_id == current_user.id
 end
 
   private
@@ -40,11 +37,13 @@ end
     params.require(:dish).permit(
       :title,
       :info,
-      :image
-      ).merge(user_id: current_user.id,)
+      :image,
+      :food,
+      :recipe
+      ).merge(user_id: current_user.id)
   end
 
   def params_recipe
-    params.require(:recipes).permit(recipe:[],image:[]).merge(dish_id: @dish.id)
+    params.require(:recipes).permit(recipe:[])
   end
 end
