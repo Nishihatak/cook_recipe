@@ -19,4 +19,9 @@
     .recipe__main__recipe-form
       %h3 作り方
       %ul.recipe__main__recipe-form__cook
-        = @dish.recipe 
+        = @dish.recipe
+    .recipe__main__cooktime
+      %h3 調理時間
+      %p およそ
+      = @dish.cooktime
+      %span 分

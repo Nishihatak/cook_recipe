@@ -1,7 +1,4 @@
 - @dishes.each do |dish|
-  -if user_signed_in? && dish.user_id == current_user.id
-    = link_to edit_recipe_path(dish.id) do
-      編集する
   .recipe-lists__inner__preview
     .recipe-lists__inner__preview__image
       = image_tag (dish.image.to_s)
@@ -17,4 +14,13 @@
         .recipe-info
           = dish.info
       .recipe-lists__inner__preview__text__material
-        材料：　人参、大根、わかめ
+        = dish.food
+      .recipe-lists__inner__preview__text__cooktime
+        %span 調理時間
+        = dish.cooktime
+        %span 分
+      -if user_signed_in? && dish.user_id == current_user.id
+        = link_to edit_recipe_path(dish.id) do
+          編集する
+        = link_to recipe_path(dish.id), method: :delete do
+          削除する

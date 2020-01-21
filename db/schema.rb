@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_01_21_055807) do
+ActiveRecord::Schema.define(version: 2020_01_21_074721) do
 
   create_table "active_storage_attachments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -44,6 +44,7 @@ ActiveRecord::Schema.define(version: 2020_01_21_055807) do
     t.string "image"
     t.text "food"
     t.text "recipe"
+    t.integer "cooktime"
     t.index ["user_id"], name: "index_dishes_on_user_id"
   end
 

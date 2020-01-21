@@ -30,6 +30,7 @@ end
 def destroy
   dish = Dish.find(params[:id])
     dish.destroy if dish.user_id == current_user.id
+    redirect_to root_path
 end
 
   private
@@ -39,7 +40,8 @@ end
       :info,
       :image,
       :food,
-      :recipe
+      :recipe,
+      :cooktime
       ).merge(user_id: current_user.id)
   end
 

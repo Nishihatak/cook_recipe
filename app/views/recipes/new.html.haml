@@ -31,5 +31,10 @@
             手順
             .recipe__main__recipe-form__cook__list--icon
               = f.text_area :recipe, class: "material--list"
+      .recipe__main__cooktime
+        %h3 調理時間
+        %p およそ
+        = f.text_field :cooktime
+        %span 分
     .recipe__submit
     = f.submit 'レシピを投稿',class:"submit-botton"
