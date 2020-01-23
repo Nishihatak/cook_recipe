@@ -1,22 +1,44 @@
-.header__content{
-  height: 82px;
-  padding: 20px;
-  text-align: center;
-  background: #f7f3e8;
-  line-height: 67px;
-  &__list{
-    background-color: white;
-    width: 70%;
-    margin: auto;
-    @include flexbox_space-between;
-  }
-  &__list li{
-    display: block;
-    padding:0px 40px;
+.header__wrapper{
+  padding: 0 15px;
+  margin: 0 auto;
+  &__container{
+    padding: 180px 0 100px 0;
+    background-image: url(https://isorepublic.com/wp-content/uploads/2019/12/iso-republic-chopped-tomatoes-1-2048x1367.jpg);
+    background-size: cover;
+    color: white;
   }
 }
-.recipe-content{
-  background-color:#f7f3e8;
+.main{
+  margin-top: 30px;
+  &__wrapper{
+    border: dotted 3px #364e96;/*線色*/
+    width: 70%;
+    margin: auto;
+    padding:15px;
+    &__header ul{
+      width: 100%;
+      margin: auto;
+      padding:15px;
+    }
+    &__header li{
+      float: left;
+      font-size: 20px;
+      font-weight: bold;
+      height: 60px;
+      line-height: 60px;
+      list-style: none;
+      text-align: center;
+      width: 30%;
+      color: #364e96;/*文字色*/
+      border: solid 3px #364e96;/*線色*/
+      border-radius: 0.5em;/*角丸*/
+      margin:10px;
+    }
+    &__header li:hover{
+      background-color:#364396;
+      color:white;
+    }
+  }
 }
 .recipe-lists{
   text-align: center;
@@ -31,10 +53,14 @@
     background-color: white;
     width: 70%;
     margin: auto;
+    padding-top: 90px;
     &__preview{
       display: inline-block;
       width: 100%;
-      margin: 50px;
+      margin: auto;
+      border: solid 3px #364e96;
+      padding: 20px;
+      margin: 10px;
       &__image{
         display:flex;
         float: left;
@@ -56,6 +82,26 @@
       }
     }
   }
+}
+.btn:hover{
+  opacity:1;
+}
+.recipe-title{
+  display: inline-block;
+  width: 60%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding-left: 20px;
+  margin-right: -60px;
+}
+.recipe-info{
+  display: inline-block;
+  width: 60%;
+  height:60px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding-left: 20px;
+  margin-right: -60px;
 }
 // .recipe-lists{
 //   text-align: center;

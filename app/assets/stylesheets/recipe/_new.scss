@@ -21,6 +21,12 @@
           height: 60px;
           font-size: 18px;
         }
+        &__show-title{
+          font-size: 50px;
+        }
+          &__show-info{
+            font-size: 18px;
+          }
     }
     &__content{
       padding:20px;
@@ -30,12 +36,14 @@
       &__insert{
         @include flexbox_space-between;
         &__image{
-          height:200px;
-          width: 200px;
-          font-size:100px;
-          padding-left:100px;
+          width: 50%;
+          height: 50%;
+          font-size:18px;
+          position: relative;
         }
         &__material{
+          width: 50%;
+          height: 50%;
           padding-right:100px;
         }
       }
@@ -43,10 +51,19 @@
     &__recipe-form{
       position: relative;
       font-size:18px;
-      &__list{
-        height:100px;
-        width: 15%;
+      border-bottom:2px solid #dee7ec;
+      padding:20px;
+      &__cook{
+        margin: auto;
+        &__list{
+            border: solid 3px #364e96;
+            width:100%;
+            margin: 10px;
+        }
       }
+    }
+    &__cooktime{
+      padding:20px;
     }
   }
   &__submit{
@@ -78,6 +95,54 @@
       width: 80%;
       height: 60px;
       font-size: 18px;
+      padding:10px;
+      margin: 10px;
+    }
+
+    .image{
+      height: 200px;
+      width: 200px;
+    }
+    .recipe-image{
+      height: 120px;
+      width: 120px;
+      margin: auto;
+      &--icon{
+        position: absolute;
+        font-size: 56px;
+        top: 115px;
+        left: 87px;
+        opacity: 0.6;
+      }
+      &--icon:hover{
+        opacity: 1;
+      }
+    }
+    .dish-image{
+      height: 200px;
+      width: 200px;
+      &--icon{
+        position: absolute;
+        font-size: 100px;
+        top: 48px;
+        left: 160px;
+        opacity: 0.8;
+      }
+      &--icon:hover{
+        opacity: 1;
+      }
+    }
+    .recipe-icon{
+      font-size: 100px;
+      margin: auto;
+    }
+    .recipe-recipe{
+      width:90%;
+      padding:10px;
+    }
+    .material--list{
+      width:90%;
+      height:150px;
       padding:10px;
       margin: 10px;
     }

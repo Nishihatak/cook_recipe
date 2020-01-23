@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_01_10_052145) do
+ActiveRecord::Schema.define(version: 2020_01_21_074721) do
 
   create_table "active_storage_attachments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -37,38 +37,33 @@ ActiveRecord::Schema.define(version: 2020_01_10_052145) do
     t.bigint "user_id", null: false
     t.string "title", null: false
     t.text "kotu"
+    t.integer "time", default: 0
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.text "info"
     t.string "image"
+    t.text "food"
+    t.text "recipe"
+    t.integer "cooktime"
     t.index ["user_id"], name: "index_dishes_on_user_id"
   end
 
   create_table "images", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "image", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.bigint "recipe_id", null: false
-    t.index ["recipe_id"], name: "index_images_on_recipe_id"
-  end
-
-  create_table "recipe_images", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "dish_id", null: false
     t.bigint "recipe_id"
-    t.bigint "image_id"
+    t.string "image"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["image_id"], name: "index_recipe_images_on_image_id"
-    t.index ["recipe_id"], name: "index_recipe_images_on_recipe_id"
+    t.index ["dish_id"], name: "index_images_on_dish_id"
+    t.index ["recipe_id"], name: "index_images_on_recipe_id"
   end
 
   create_table "recipes", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "dish_id", null: false
-    t.bigint "image_id", null: false
-    t.text "recipe", null: false
+    t.text "text", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["dish_id"], name: "index_recipes_on_dish_id"
-    t.index ["image_id"], name: "index_recipes_on_image_id"
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -87,9 +82,7 @@ ActiveRecord::Schema.define(version: 2020_01_10_052145) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "dishes", "users"
+  add_foreign_key "images", "dishes"
   add_foreign_key "images", "recipes"
-  add_foreign_key "recipe_images", "images"
-  add_foreign_key "recipe_images", "recipes"
   add_foreign_key "recipes", "dishes"
-  add_foreign_key "recipes", "images"
 end

@@ -1,5 +1,5 @@
 .recipe
-  = form_with(model: @dish, url:recipes_path,local: true,method: :post ) do |f|
+  = form_with(model: @dish, url:recipe_path,local: true, method: :patch) do |f|
     .recipe__main
       .recipe__main__header
         .recipe__main__header__titile

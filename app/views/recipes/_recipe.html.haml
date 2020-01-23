@@ -1,0 +1,7 @@
+- @recipes.each_with_index do |recipe,i|
+  %li.recipe__main__recipe-form__cook__list
+    手順
+    = (i + 1)
+    .recipe__main__recipe-form__cook__list--image
+    .recipe__main__recipe-form__cook__list--text
+      = recipe.text

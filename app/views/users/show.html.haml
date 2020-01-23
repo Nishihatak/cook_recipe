@@ -4,6 +4,22 @@
       = image_tag @user.avatar,class: "avatar"
     .user-content__pro__name
       = @user.nickname
-  .user-content__recipe
-    = render "home/recipe"
-    = paginate @dishes
+    .user-content__recipe
+      %h2 投稿したレシピ
+.main
+  .main__wrapper
+    %ul.main__wrapper__header
+      %li.main__wrapper__header__left
+        新着
+      %li.main__wrapper__header__center
+        時間
+      %li.main__wrapper__header__right
+        栄養
+    .main_wrapper__content
+      .recipe-content
+        .recipe-lists
+          .recipe-lists__head
+           
+          .recipe-lists__inner
+            = render "home/recipe"
+            = paginate @dishes
