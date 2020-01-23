@@ -1,0 +1,12 @@
+ja:
+  activerecord:
+    models:
+      dish: レシピ・料理名
+    attributes:
+      dish:
+        title: ''
+        info: ''
+        image: ''
+        recipe: ''
+        food: ''
+        cooktime: ''

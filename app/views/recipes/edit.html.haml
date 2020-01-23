@@ -9,7 +9,7 @@
       .recipe__main__content
         .recipe__main__content__insert
           .recipe__main__content__insert__image
-            - if @dish.image.present?
+            - if @dish.image.to_s.present?
               = f.label :image do
                 = image_tag @dish.image.to_s,class: "dish-image"
                 = icon 'fas', 'camera',class:"dish-image--icon"
