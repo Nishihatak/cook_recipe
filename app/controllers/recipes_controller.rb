@@ -5,7 +5,10 @@ class RecipesController < ApplicationController
   end
 
   def create
-    @dish = Dish.create(params_dish)
+    @dish = Dish.new(params_dish)
+      unless @dish.valid?
+        render action: :new
+      end
   end
 
 
@@ -15,15 +18,19 @@ end
 
 def edit
   @dish = Dish.find(params[:id])
-  @recipes = @dish.recipes
 end
 
 def update
+  @dish = Dish.new(params_dish)
+  unless @dish.valid?
+    render action: :edit and return 
+  end
+  
   @dish = Dish.find(params[:id])
   if @dish = @dish.update(params_dish)
     redirect_to root_path
   else
-    render :edit
+    render action: :edit and return 
   end
 end
 
