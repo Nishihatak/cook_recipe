@@ -50,5 +50,6 @@ test:
 production:
   <<: *default
   database: cook_recipe_production
-  username: cook_recipe
-  password: <%= ENV['COOK_RECIPE_DATABASE_PASSWORD'] %>
+   username: root
+  password: <%= ENV['DATABASE_PASSWORD'] %>
+  socket: /var/lib/mysql/mysql.sock
