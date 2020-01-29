@@ -33,7 +33,6 @@ namespace :deploy do
   end
 end
 
-
 set :default_env, {
   rbenv_root: "/usr/local/rbenv",
   path: "/usr/local/rbenv/shims:/usr/local/rbenv/bin:$PATH",
@@ -52,7 +51,6 @@ namespace :deploy do
   task :restart do
     invoke 'unicorn:restart'
   end
-end
 
   desc 'upload credentials.yml.enc'
   task :upload do
