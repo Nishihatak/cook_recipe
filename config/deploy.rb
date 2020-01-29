@@ -52,6 +52,7 @@ namespace :deploy do
   task :restart do
     invoke 'unicorn:restart'
   end
+end
 
   desc 'upload credentials.yml.enc'
   task :upload do
