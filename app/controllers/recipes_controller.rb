@@ -8,6 +8,8 @@ class RecipesController < ApplicationController
     @dish = Dish.new(params_dish)
       unless @dish.valid?
         render action: :new
+      else
+        @dish.save
       end
   end
 
