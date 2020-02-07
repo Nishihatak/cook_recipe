@@ -20,7 +20,7 @@
               %li.header__inner__right__nickname
                 = current_user.nickname
               %li.header__inner__right__avatar
-                = image_tag current_user.avatar,class: "avatar"
+                = image_tag current_user.avatar.to_s,class: "avatar"
         %li.header__inner__right__logout
           = link_to "ログアウト" ,destroy_user_session_path, method: :delete
         %li.header__inner__right__write
