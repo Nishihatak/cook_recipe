@@ -1,27 +1,36 @@
-# README
+# アプリ名
+## レシピ投稿アプリ　cook_recipe
+### 
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
 
-Things you may want to cover:
 
-* Ruby version
 
-* System dependencies
+# 概要
+スクールで学んだことを生かし、また行ったことのない実装も前衛的に挑戦し、オリジナルアプリを作成したため紹介します。
+# アプリへの思い
+現存のレシピサイトでは調理時間や栄養で検索を出来なサイトがあります。しかし、実際料理する際に時間や栄養を考え作りたい料理を探すことがあると思います。そんな時に栄養や時間で検索できればいいなと思いアプリを開発しております。
+# アプリケーション情報
+## 接続先情報
+http://54.95.134.107/
+### アカウント情報
+||Eメール|パスワード|
+|------|----|-------|
+|ユーザー|aaaa@gmail.com|aaaa|
 
-* Configuration
+### 画面サンプル
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+# 開発状況
+## 開発環境
+- ruby/Ruby on Rails/haml/scss/javascript/MySQL/Github/AWS/VScode
+## 機能一覧
+- ログイン機能
+- レシピの登録・編集機能
+- carrierwaveによる画像の登録
+# 動作確認方法
+- Chromeの最新版を利用してアクセスしてください。
+- ただしデプロイ等で接続できないタイミングもございます。その際は少し時間をおいてから接続ください。
+# ER図
+### 
 
 * Database creation
 ## 1. users Table
@@ -46,48 +55,3 @@ Things you may want to cover:
 
 ### Association
 - belongs_to :users
-- has_many :recipes,dependent: :destroy
-- has_many :images,dependent: :destroy
-- has_many :ingredients,dependent: :destroy
-- belongs_to :ingredients
-
-## 3. ingredients Table
-|Column|Type|Options|
-|------|----|-------|
-|name|string|null: false|
-|ancestry|string|
-
-### Association
-- has_many :dish
-- has_ancestry
-
-## 4. recipes Table
-|Column|Type|Options|
-|------|----|-------|
-|text|text|null: false|
-|dishes_id|reference|null: false,foreign_key: true|
-|imaages_id|reference|null: false,foreign_key: true|
-
-### Association
-- belongs_to :dishes
-- has_many :images, through: :recipe_images
-
-## 5. images Table
-|Column|Type|Options|
-|------|----|-------|
-|images|string|
-|recipes_id|reference|null: false,foreign_key: true|
-
-### Association
-- belongs_to :dishes
-- has_many :recipes, through: :recipe_images
-
-## 6. recipes_images Table
-Column|Type|Options|
-|------|----|-------|
-|dishes_id|reference|null: false,foreign_key: true|
-|recipes_id|reference|null: false,foreign_key: true|
-
-### Association
-- belongs_to :images
-- belomgs_to :recipes
