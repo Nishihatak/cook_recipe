@@ -15,11 +15,11 @@
         .recipe__main__content__insert__material
           %h3 材料
           .recipe__main__content__insert__material--list
-            = @dish.food
+            = simple_format (@dish.food)
     .recipe__main__recipe-form
       %h3 作り方
       %ul.recipe__main__recipe-form__cook
-        = @dish.recipe
+        = simple_format( @dish.recipe)
     .recipe__main__cooktime
       %h3 調理時間
       %p およそ

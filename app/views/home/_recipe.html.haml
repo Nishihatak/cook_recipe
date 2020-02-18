@@ -12,9 +12,9 @@
           = dish.user.nickname
       .recipe-lists__inner__preview__text__info
         .recipe-info
-          = dish.info
+          = simple_format(dish.info)
       .recipe-lists__inner__preview__text__material
-        = dish.food
+        = simple_format(dish.food)
       .recipe-lists__inner__preview__text__cooktime
         %span 調理時間
         = dish.cooktime
